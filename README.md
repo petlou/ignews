@@ -3,6 +3,10 @@
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=react&message=framework&color=blue&style=for-the-badge&logo=REACT"/>
   <img src="https://img.shields.io/static/v1?label=next&message=framework&color=blue&style=for-the-badge&logo=nextdotjs"/>
+  <img src="https://img.shields.io/static/v1?label=scss&message=styles&color=ff69b4&style=for-the-badge&logo=sass"/>
+  <img src="https://img.shields.io/static/v1?label=stripe&message=lib&color=blue&style=for-the-badge&logo=stripe"/>
+  <img src="https://img.shields.io/static/v1?label=github&message=authentication&color=lightgrey&style=for-the-badge&logo=github"/>
+  <img src="https://img.shields.io/static/v1?label=faunaDB&message=database&color=critical&style=for-the-badge&logo=serverless"/>
   <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/>
 </p>
 
