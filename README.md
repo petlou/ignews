@@ -1,7 +1,6 @@
 <h1>ig.news</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/static/v1?label=react&message=framework&color=blue&style=for-the-badge&logo=REACT"/>
   <img src="https://img.shields.io/static/v1?label=next&message=framework&color=blue&style=for-the-badge&logo=nextdotjs"/>
   <img src="https://img.shields.io/static/v1?label=scss&message=styles&color=ff69b4&style=for-the-badge&logo=sass"/>
   <img src="https://img.shields.io/static/v1?label=stripe&message=lib&color=blue&style=for-the-badge&logo=stripe"/>

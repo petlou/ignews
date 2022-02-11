@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Prismic from '@prismicio/client';
 import { RichText } from 'prismic-dom';
+import Link from 'next/link';
 
 import { getPrismicClient } from '../../services/prismic';
 
@@ -28,11 +29,13 @@ export default function Posts({ posts }: PostsProps) {
       <main className={styles.container}>
         <div className={styles.posts}>
           {posts.map(post => (
-            <a key={post.slug} href="#">
-              <time>{post.updatedAt}</time>
-              <strong>{post.title}</strong>
-              <p>{post.excerpt}</p>
-            </a>
+            <Link href={`/posts/${post.slug}`} key={post.slug}>
+              <a>
+                <time>{post.updatedAt}</time>
+                <strong>{post.title}</strong>
+                <p>{post.excerpt}</p>
+              </a>
+            </Link>
           ))}
         </div>
       </main>
@@ -43,7 +46,7 @@ export default function Posts({ posts }: PostsProps) {
 export const getStaticProps: GetStaticProps = async () => {
   const prismic = getPrismicClient();
 
-  const response = await prismic.query(
+  const response = await prismic.query<any>(
     [Prismic.predicates.at('document.type', 'publication')],
     {
       fetch: ['publication.title', 'publication.content'],
@@ -59,8 +62,8 @@ export const getStaticProps: GetStaticProps = async () => {
         post.data.content.find(
           (content: { type: string }) => content.type === 'paragraph',
         )?.text ?? '',
-      updatedAt: new Date(post.last_publication_date).toLocaleDateString(
-        'pet-BR',
+      updatedAt: new Date(post.last_publication_date!).toLocaleDateString(
+        'pt-BR',
         {
           day: '2-digit',
           month: 'long',
@@ -69,6 +72,7 @@ export const getStaticProps: GetStaticProps = async () => {
       ),
     };
   });
+
   return {
     props: {
       posts,
