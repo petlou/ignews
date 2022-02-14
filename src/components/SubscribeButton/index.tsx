@@ -6,11 +6,7 @@ import { api } from '../../services/api';
 
 import styles from './styles.module.scss';
 
-interface SubscribeButtonsProps {
-  priceId: string;
-}
-
-export function SubscribeButton({ priceId }: SubscribeButtonsProps) {
+export function SubscribeButton() {
   const { data: session } = useSession();
   const router = useRouter();
 
